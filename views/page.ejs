@@ -1,0 +1,49 @@
+<div class="container"  style="max-width: 550px;padding: 15px;margin: 0 auto;">
+<h3>Pages Management</h3>
+</br>
+<form action="/page" method="post">
+    <label for="name">Add a page name</label>
+    <input name="projectBy" type="hidden" value="<%=projectId %>" />
+    <input name="name" type="text" placeholder="page name"  class="form-control" />
+    <br/>
+
+    <input type="submit" value="Add page" class="btn btn-lg btn-primary btn-block" />
+</form>
+</br>
+</br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% _.each(pages, function (data) { %>
+    <tr>
+        <th scope="row"></th>
+        <td>
+            <%=data.name %></td>
+        <td>
+            <form action="/edit" method="get">
+                <input name="id" type="hidden" value="<%=data.id %>" />
+                <input type="submit" value="Edit" class="btn btn-primary btn-sm" />
+            </form>
+        </td>
+        <td>
+            <form action="/deletePage" method="post">
+                <input name="id" type="hidden" value="<%=data.id %>" />
+                <input type="submit" value="Delete" class="btn btn-primary btn-sm" />
+            </form>
+        </td>
+    </tr>
+    <% }) %>
+    </tbody>  
+</table>
+<a href="/project">Back To Project</a>
+</div>
+
+
+</div>

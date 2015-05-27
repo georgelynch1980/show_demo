@@ -1,0 +1,98 @@
+<div class="container"  style="max-width: 550px;padding: 15px;margin: 0 auto;">
+<h3>Page Edit</h3>
+<br/>
+<h4>Add file</h4>
+<form action="edit" method="post" enctype="multipart/form-data">
+    <label>File Title</label>
+    <input type="text" name="title" placeholder="title" class="form-control"/>
+    <br/>
+    <label>File Width</label>
+    <input type="text" name="width" placeholder="width" class="form-control"/>
+    <br/>
+    <label>File Height</label>
+    <input type="text" name="height" placeholder="height" class="form-control" />
+    <input name="pageBy" type="hidden" value="<%=data.id %>" />
+    <br/>
+    <label>Please upload your file:</label>
+    <input type="file" name="file" />
+    <br/>
+    <br/>
+    <input type="submit" value="Submit"  class="btn btn-lg btn-primary btn-block" />
+</form>
+<br/>
+<br/>
+<br/>
+<br/>
+<ul>
+    <% _.each(pageFile, function (data) { %>
+        <li>
+            <!--
+            <p>title:
+                <%=data.title %>
+            </p>
+            <p>type:
+                <%=data.type %>
+            </p>
+            <p>pageBy:
+                <%=data.pageBy %>
+            </p>
+            <p>pageFileId:
+                <%=data.id %>
+            </p>
+            -->
+            <% if (data.type=="application/x-shockwave-flash" ) { %>
+            <div id="Flash_container_<%=data.id %>" style="width:<%=data.width%>px;height:<%=data.height%>px;margin:0px auto">
+                <object id="FlashID_<%=data.id %>" width="100%" height="100%">
+                    <param name="movie" value="<%=data.path %>">
+                    <param name="quality" value="high">
+                    <param name="wmode" value="opaque">
+                    <param name="swfversion" value="8.0.35.0">
+                    <!-- 此 param 標籤會提示使用 Flash Player 6.0 r65 和更新版本的使用者下載最新版本的 Flash Player。如果您不想讓使用者看到這項提示，請將其刪除。 -->
+                    <param name="expressinstall" value="js/expressInstall.swf">
+                    <!-- 下一個物件標籤僅供非 IE 瀏覽器使用。因此，請使用 IECC 將其自 IE 隱藏。 -->
+                    <!--[if !IE]>-->
+                    <object type="application/x-shockwave-flash" data="<%=data.path %>" width="100%" height="100%">
+                        <!--<![endif]-->
+                        <param name="quality" value="high">
+                        <param name="wmode" value="opaque">
+                        <param name="swfversion" value="8.0.35.0">
+                        <param name="expressinstall" value="js/expressInstall.swf">
+                        <!-- 瀏覽器會為使用 Flash Player 6.0 和更早版本的使用者顯示下列替代內容。 -->
+                        <div>
+                            <h4>這個頁面上的內容需要較新版本的 Adobe Flash Player。</h4>
+                            <p>
+                                <a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="取得 Adobe Flash Player" width="112" height="33" />
+                                </a>
+                            </p>
+                        </div>
+                        <!--[if !IE]>-->
+                    </object>
+                    <!--<![endif]-->
+                </object>
+            </div>
+            <script type="text/javascript">
+                swfobject.registerObject("FlashID_<%=data.id %>");
+            </script>
+            <% } %>
+
+                <% if (data.type=="image/jpeg" ) { %>
+                <script>
+                    $(document).ready(function () {
+                        $("#imagesID_<%=data.id %>").width($("#imagesID_<%=data.id %>").width());
+                        $("#imagesID_<%=data.id %>").height($("#imagesID_<%=data.id %>").height());
+                    });
+                </script>
+                <img id="imagesID_<%=data.id %>" src="<%=data.path %>" alt="">
+                <% } %>
+            <form action="fileDelete" method="post">
+                <input name="pageBy" type="hidden" value="<%=data.pageBy %>" />
+                <input name="id" type="hidden" value="<%=data.id %>" />
+                <input type="submit" value="Delete" class="btn btn-lg btn-primary" />
+            </form>
+        </li>
+        <% }) %>
+</ul>
+
+</div>
+
+

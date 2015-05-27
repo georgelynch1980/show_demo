@@ -1,0 +1,30 @@
+<div class="container"  style="max-width: 550px;padding: 15px;margin: 0 auto;">
+<h3>Projects Management</h3>
+</br>
+<form action="/project" method="post">
+    <label for="name">add a project name</label>
+    <input name="name" type="text" placeholder="Project name" class="form-control"  />
+    </br>
+    <input type="submit" value="Add Project" class="btn btn-lg btn-primary btn-block" />
+</form>
+</br>
+</br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Publish</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% _.each(projects, function (data) { %>
+    <tr>
+      <th scope="row"></th>
+      <td><a href="/ppage/?project=<%=data.id %>"><%=data.name %></a></td>
+      <td><a href="/show?projectBy=<%=data.id %>" target="_blank" class="btn btn-primary btn-sm" role="button">publish</a></td>
+    </tr>
+    <% }) %>
+    </tbody>  
+</table>
+</div>
