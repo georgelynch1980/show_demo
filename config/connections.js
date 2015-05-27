@@ -33,8 +33,7 @@ module.exports.connections = {
   },
   heroku_mongolab : {
      adapter   : "sails-mongo",
-     url       : "mongodb://heroku_app37237626:georgelynch1980@ds041032.mongolab.com:41032/heroku_app37237626",
-     database:   "heroku_app36381899"
+     url       : "mongodb://heroku_app37237626:georgelynch1980@ds041032.mongolab.com:41032/heroku_app37237626",//mongodb://USER:PASSWORD@HOST:PORT/DB
   },  
   /***************************************************************************
   *                                                                          *
