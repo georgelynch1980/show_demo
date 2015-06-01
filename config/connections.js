@@ -31,9 +31,23 @@ module.exports.connections = {
   localDiskDb: {
     adapter: 'sails-disk'
   },
+  /***************************************************************************
+  *                                                                          *
+  * MySQL is the world's most popular relational database.                   *
+  * http://en.wikipedia.org/wiki/MySQL                                       *
+  *                                                                          *
+  * Run: npm install sails-mongo                                             *
+  *                                                                          *
+  ***************************************************************************/
+    //mongodb://heroku_app37409839:k2c9506pal4gkjnpi3f4ie4op4@ds043062.mongolab.com:43062/heroku_app37409839
   heroku_mongolab : {
-     adapter   : "sails-mongo",
-     url       : "mongodb://heroku_app37237626:georgelynch1980@ds041032.mongolab.com:41032/heroku_app37237626",//mongodb://USER:PASSWORD@HOST:PORT/DB
+    adapter: 'sails-mongo',
+    //url:process.env.MONGOLAB_URI
+    host: 'ds043062.mongolab.com',
+    port: 43062,
+    user: 'heroku_app37409839',
+    password: 'k2c9506pal4gkjnpi3f4ie4op4',
+    database: 'heroku_app37409839'
   },  
   /***************************************************************************
   *                                                                          *
