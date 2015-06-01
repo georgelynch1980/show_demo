@@ -28,13 +28,13 @@
             <%=data.name %></td>
         <td>
             <form action="/edit" method="get">
-                <input name="id" type="hidden" value="<%=data._id %>" />
+                <input name="id" type="hidden" value="<%=data.id %>" />
                 <input type="submit" value="Edit" class="btn btn-primary btn-sm" />
             </form>
         </td>
         <td>
             <form action="/deletePage" method="post">
-                <input name="id" type="hidden" value="<%=data._id %>" />
+                <input name="id" type="hidden" value="<%=data.id %>" />
                 <input type="submit" value="Delete" class="btn btn-primary btn-sm" />
             </form>
         </td>

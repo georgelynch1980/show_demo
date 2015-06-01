@@ -21,8 +21,8 @@
     <% _.each(projects, function (data) { %>
     <tr>
       <th scope="row"></th>
-      <td><a href="/ppage/?project=<%=data._id %>"><%=data.name %></a></td>
-      <td><a href="/show?projectBy=<%=data._id %>" target="_blank" class="btn btn-primary btn-sm" role="button">publish</a></td>
+      <td><a href="/ppage/?project=<%=data.id %>"><%=data.name %></a></td>
+      <td><a href="/show?projectBy=<%=data.id %>" target="_blank" class="btn btn-primary btn-sm" role="button">publish</a></td>
     </tr>
     <% }) %>
     </tbody>  
