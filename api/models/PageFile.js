@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-
+    schema: true,
     attributes: {
         title: {
             type: 'string',
@@ -31,6 +31,6 @@ module.exports = {
         pageBy: {
             model: 'page'
         }
-        
+
     }
 };
