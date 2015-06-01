@@ -7,7 +7,7 @@
 var uuid = require('node-uuid'),
     path = require('path');
 module.exports = {
-    find: function (req, res) {
+    find: function (req, res,next) {
         var params = req.params.all();
         sails.log(req.param('id'));
         var pageBy = req.param('id');
@@ -25,7 +25,7 @@ module.exports = {
             });
         });
     },
-    destroy: function (req, res) {
+    destroy: function (req, res,next) {
         var id = req.param('id');
         var pageBy = req.param('pageBy');
         if (!id) {
@@ -43,7 +43,7 @@ module.exports = {
             });
         });
     },
-    upload: function (req, res) {
+    upload: function (req, res,next) {
         var results = [];
         var streamOptions = {
             dirname: sails.config.appPath + "/assets/images/",
