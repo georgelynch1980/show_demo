@@ -1,3 +1,4 @@
+<a href="/project">Back To Project</a> | <a href="/page">Back To Page</a>
 <div class="container"  style="max-width: 550px;padding: 15px;margin: 0 auto;">
 <h3>Page Edit</h3>
 <br/>
@@ -40,8 +41,10 @@
                 <%=data.id %>
             </p>
             -->
+             <br/>
+            <H3><%=data.title %></H3>
             <% if (data.type=="application/x-shockwave-flash" ) { %>
-            <div id="Flash_container_<%=data.id %>" style="width:<%=data.width%>px;height:<%=data.height%>px;margin:0px auto">
+            <div id="Flash_container_<%=data.id %>" style="width:<%=data.width%>px;height:<%=data.height%>px;">
                 <object id="FlashID_<%=data.id %>" width="100%" height="100%">
                     <param name="movie" value="<%=data.path %>">
                     <param name="quality" value="high">
@@ -73,22 +76,24 @@
             <script type="text/javascript">
                 swfobject.registerObject("FlashID_<%=data.id %>");
             </script>
-            <% } %>
-
-                <% if (data.type=="image/jpeg" ) { %>
+            <% }else{ %>
                 <script>
                     $(document).ready(function () {
                         $("#imagesID_<%=data.id %>").width($("#imagesID_<%=data.id %>").width());
                         $("#imagesID_<%=data.id %>").height($("#imagesID_<%=data.id %>").height());
                     });
                 </script>
-                <img id="imagesID_<%=data.id %>" src="<%=data.path %>" alt="">
+                <img id="imagesID_<%=data.id %>" src="<%=data.path %>" onerror="location.reload();" alt="">
+                <br/>
                 <% } %>
+            <br/>
             <form action="fileDelete" method="post">
                 <input name="pageBy" type="hidden" value="<%=data.pageBy %>" />
                 <input name="id" type="hidden" value="<%=data.id %>" />
                 <input type="submit" value="Delete" class="btn btn-lg btn-primary" />
             </form>
+            <br/>
+            <br/>
         </li>
         <% }) %>
 </ul>
