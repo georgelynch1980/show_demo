@@ -12,27 +12,42 @@
 
 module.exports = {
 
-  /***************************************************************************
-   * Set the default database connection for models in the production        *
-   * environment (see config/connections.js and config/models.js )           *
-   ***************************************************************************/
+    /***************************************************************************
+     * Set the default database connection for models in the production        *
+     * environment (see config/connections.js and config/models.js )           *
+     ***************************************************************************/
+    
+    //models: {
+        //connection: 'heroku_mongolab'
+    //},
 
-   models: {
-     connection: 'heroku_mongolab'
-   },
+    /***************************************************************************
+     * Set the port in the production environment to 80                        *
+     ***************************************************************************/
 
-  /***************************************************************************
-   * Set the port in the production environment to 80                        *
-   ***************************************************************************/
+    // port: 80,
 
-  // port: 80,
+    /***************************************************************************
+     * Set the log level in production environment to "silent"                 *
+     ***************************************************************************/
 
-  /***************************************************************************
-   * Set the log level in production environment to "silent"                 *
-   ***************************************************************************/
-
-  // log: {
-  //   level: "silent"
-  // }
+    // log: {
+    //   level: "silent"
+    // }
+    connections: {
+        heroku_mongolab: {
+            adapter: 'sails-mongo',
+            host: 'ds045622.mongolab.com',
+            port: 45622,
+            schema: 'true',
+            user: 'heroku_fmrf6vgj',
+            password: 'm2g19il1fnussj3627vbtvojl3',
+            database: 'heroku_fmrf6vgj'
+        }
+    },
+    models: {
+        connection: 'heroku_mongolab'
+    },
+    port: 3000,
 
 };
