@@ -77,13 +77,7 @@
                 swfobject.registerObject("FlashID_<%=data.id %>");
             </script>
             <% }else{ %>
-                <script>
-                    $(document).ready(function () {
-                        $("#imagesID_<%=data.id %>").width($("#imagesID_<%=data.id %>").width());
-                        $("#imagesID_<%=data.id %>").height($("#imagesID_<%=data.id %>").height());
-                    });
-                </script>
-                <img id="imagesID_<%=data.id %>" src="<%=data.path %>" onerror="location.reload();" alt="">
+                <img id="imagesID_<%=data.id %>" src="<%=data.path %>" onerror="location.reload();" alt="<%=data.title %>" style="width:<%=data.width%>;height:<%=data.height%>;">
                 <br/>
                 <% } %>
             <br/>

@@ -63,7 +63,7 @@
                 <% }else{ %>
                 
                 <div id="images_container_<%=data.id %>" style="margin:0px auto;width:<%=data.width%>px;height:<%=data.height%>px">
-                    <img id="imagesID_<%=data.id %>" src="<%=data.path %>" alt="" >
+                    <img id="imagesID_<%=data.id %>" src="<%=data.path %>" onerror="location.reload();" alt="<%=data.title %>" style="width:<%=data.width%>;height:<%=data.height%>;">
                 </div>
                 <% } %>
         </li>
