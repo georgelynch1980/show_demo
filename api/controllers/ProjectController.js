@@ -52,7 +52,7 @@ module.exports = {
 
         // Standard URI format: mongodb://[dbuser:dbpassword@]host:port/dbname
 
-        var uri = 'mongodb://user:pass@host:port/db';
+        var uri = 'mongodb://heroku_fmrf6vgj:m2g19il1fnussj3627vbtvojl3@ds045622.mongolab.com:45622/heroku_fmrf6vgj';
 
         mongodb.MongoClient.connect(uri, function (err, db) {
 
