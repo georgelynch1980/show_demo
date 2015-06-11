@@ -25,10 +25,8 @@ module.exports = {
 
     },
     find: function (req, res) {
+        /*
         var mongodb = require('mongodb');
-
-        // Create seed data
-
         var seedData = [
             {
                 decade: '1970s',
@@ -58,23 +56,14 @@ module.exports = {
 
             if (err) throw err;
 
-            /*
-             * First we'll add a few songs. Nothing is required to create the
-             * songs collection; it is created automatically when we insert.
-             */
 
             var songs = db.collection('songs');
 
-            // Note that the insert method can take either an array or a dict.
 
             songs.insert(seedData, function (err, result) {
 
                 if (err) throw err;
 
-                /*
-                 * Then we need to give Boyz II Men credit for their contribution
-                 * to the hit "One Sweet Day".
-                 */
 
                 songs.update({
                         song: 'One Sweet Day'
@@ -86,11 +75,6 @@ module.exports = {
                     function (err, result) {
 
                         if (err) throw err;
-
-                        /*
-                         * Finally we run a query which returns all the hits that spend 10 or
-                         * more weeks at number 1.
-                         */
 
                         songs.find({
                             weeksAtOne: {
@@ -109,11 +93,9 @@ module.exports = {
                                 );
                             });
 
-                            // Since this is an example, we'll clean up after ourselves.
                             songs.drop(function (err) {
                                 if (err) throw err;
 
-                                // Only close the connection when your app is terminating.
                                 db.close(function (err) {
                                     if (err) throw err;
                                 });
@@ -123,7 +105,7 @@ module.exports = {
                 );
             });
         });
-
+        */
         //sails.log('project');
         Project.find({
             sort: 'id DESC'
