@@ -55,7 +55,6 @@ module.exports.connections = {
         //url:process.env.MONGOLAB_URI
         host: 'ds047692.mongolab.com',
         port: 47692,
-        schema: 'true',
         user: 'heroku_8qfjzm61',
         password: 'ep7hqb7lvmrkgup87ffm531gks',
         database: 'heroku_8qfjzm61'
