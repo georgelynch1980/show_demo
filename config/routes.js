@@ -62,11 +62,11 @@ module.exports.routes = {
         controller: "ProjectController",
         action: "create"
     },
-    'get /ppage': {
+    'get /page': {
         controller: "PageController",
         action: "find"
     },
-    'post /ppage:id?': {
+    'post /page:id?': {
         controller: "PageController",
         action: "create"
     },
