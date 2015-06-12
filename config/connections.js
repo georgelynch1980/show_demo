@@ -49,16 +49,16 @@ module.exports.connections = {
      * Run: npm install sails-mongo                                             *
      *                                                                          *
      ***************************************************************************/
-    //mongodb://heroku_fmrf6vgj:m2g19il1fnussj3627vbtvojl3@ds045622.mongolab.com:45622/heroku_fmrf6vgj
+    //mongodb://heroku_874lbclz:86po8r87dvgbm2a5grdr725dgf@ds031912.mongolab.com:31912/heroku_874lbclz
     heroku_mongolab: {
         adapter: 'sails-mongo',
         //url:process.env.MONGOLAB_URI
-        host: 'ds045622.mongolab.com',
-        port: 45622,
+        host: 'ds031912.mongolab.com',
+        port: 31912,
         schema: 'true',
-        user: 'heroku_fmrf6vgj',
-        password: 'm2g19il1fnussj3627vbtvojl3',
-        database: 'heroku_fmrf6vgj'
+        user: 'heroku_874lbclz',
+        password: '86po8r87dvgbm2a5grdr725dgf',
+        database: 'heroku_874lbclz'
     },
     /***************************************************************************
      *                                                                          *
