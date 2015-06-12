@@ -52,16 +52,12 @@ module.exports.connections = {
     //mongodb://heroku_8qfjzm61:ep7hqb7lvmrkgup87ffm531gks@ds047692.mongolab.com:47692/heroku_8qfjzm61
     heroku_mongolab: {
         adapter: 'sails-mongo',
-        //url:process.env.MONGOLAB_URI
         host: 'ds047692.mongolab.com',
         port: 47692,
+        schema: 'true',
         user: 'heroku_8qfjzm61',
         password: 'ep7hqb7lvmrkgup87ffm531gks',
         database: 'heroku_8qfjzm61'
-    },
-    heroku_mongolab_url: {
-        adapter: "sails-mongo",
-        url: "mongodb://heroku_8qfjzm61:ep7hqb7lvmrkgup87ffm531gks@ds047692.mongolab.com:47692/heroku_8qfjzm61"
     },
     /***************************************************************************
      *                                                                          *
