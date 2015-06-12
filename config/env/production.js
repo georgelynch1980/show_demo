@@ -16,24 +16,11 @@ module.exports = {
      * Set the default database connection for models in the production        *
      * environment (see config/connections.js and config/models.js )           *
      ***************************************************************************/
-    /*
+    
     models: {
         connection: 'heroku_mongolab'
-    },*/
-    connections: {
-        mongoLive: {
-            adapter: 'sails-mongo',
-            host: 'host.mongolab.com',
-            port: 31681,
-            user: 'user',
-            password: 'password',
-            database: 'database'
-        }
     },
-    models: {
-        connection: 'mongoLive'
-    },
-    port: 3000,
+    
 
     /***************************************************************************
      * Set the port in the production environment to 80                        *
@@ -48,6 +35,6 @@ module.exports = {
     // log: {
     //   level: "silent"
     // }
-
+    
 
 };
