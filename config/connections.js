@@ -62,7 +62,7 @@ module.exports.connections = {
     heroku_mongolab_url: {
         adapter: "sails-mongo",
         url: "mongodb://heroku_8qfjzm61:ep7hqb7lvmrkgup87ffm531gks@ds047692.mongolab.com:47692/heroku_8qfjzm61"
-    }
+    },
     /***************************************************************************
      *                                                                          *
      * MySQL is the world's most popular relational database.                   *
