@@ -1,25 +1,26 @@
 <script>
     setInterval(function () {
-        location.reload("http://protected-headland-6150.herokuapp.com/show?projectBy=<%=data.pageBy %>");
-    }, 600000);
+        location.reload("http://protected-headland-6150.herokuapp.com/show?projectBy=<%=data.id %>");
+    }, 5000);
 </script>
-   <ul>
+
+<ul>
     <% _.each(pages, function (data) { %>
-    <li class="nav" style="float:left;margin:5px;">
-        <a href="/show?projectBy=<%=projectId %>&pageId=<%=data.id %>">
-            <%=data.name %>
-        </a>
-    </li>
-    <% }) %>
+        <li class="nav" style="float:left;margin:5px;">
+            <a href="/show?projectBy=<%=projectId %>&pageId=<%=data.id %>">
+                <%=data.name %>
+            </a>
+        </li>
+        <% }) %>
 </ul>
 
 
 <ul>
     <% _.each(files, function (data) { %>
         <li>
-          <br/>
-          <br/>
-           <!--
+            <br/>
+            <br/>
+            <!--
             <p>type:
                 <%=data.type %>
             </p>
@@ -30,7 +31,9 @@
                 <%=data.id %>
             </p>
             -->
-            <p><h3 style="text-align: center;"><%=data.title %></h3></p>
+            <p>
+                <h3 style="text-align: center;"><%=data.title %></h3>
+            </p>
             <% if (data.type=="application/x-shockwave-flash" ) { %>
                 <div id="Flash_container_<%=data.id %>" style="width:<%=data.width%>px;height:<%=data.height%>px;margin:0px auto;">
                     <object id="FlashID_<%=data.id %>" width="100%" height="100%">
@@ -64,13 +67,13 @@
                 <script type="text/javascript">
                     swfobject.registerObject("FlashID_<%=data.id %>");
                 </script>
-                
+
                 <% }else{ %>
-                
-                <div id="images_container_<%=data.id %>" style="margin:0px auto;width:<%=data.width%>px;height:<%=data.height%>px">
-                    <img id="imagesID_<%=data.id %>" src="<%=data.path %>" onerror="location.reload();" alt="<%=data.title %>" style="width:<%=data.width%>;height:<%=data.height%>;">
-                </div>
-                <% } %>
+
+                    <div id="images_container_<%=data.id %>" style="margin:0px auto;width:<%=data.width%>px;height:<%=data.height%>px">
+                        <img id="imagesID_<%=data.id %>" src="<%=data.path %>" onerror="location.reload();" alt="<%=data.title %>" style="width:<%=data.width%>;height:<%=data.height%>;">
+                    </div>
+                    <% } %>
         </li>
         <% }) %>
 </ul>
