@@ -1,4 +1,9 @@
-<ul>
+<script>
+    setInterval(function () {
+        location.reload("http://protected-headland-6150.herokuapp.com/show?projectBy=<%=data.pageBy %>");
+    }, 600000);
+</script>
+   <ul>
     <% _.each(pages, function (data) { %>
     <li class="nav" style="float:left;margin:5px;">
         <a href="/show?projectBy=<%=projectId %>&pageId=<%=data.id %>">
