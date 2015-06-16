@@ -17,15 +17,10 @@ module.exports = {
      * environment (see config/connections.js and config/models.js )           *
      ***************************************************************************/
     
-    connections: {
-        heroku_mongolab_url: {
-            adapter: 'sails-mongo',
-            url: 'mongodb://heroku_8qfjzm61:ep7hqb7lvmrkgup87ffm531gks@ds047692.mongolab.com:47692/heroku_8qfjzm61'
-        }
-    },
     models: {
-        connection: 'heroku_mongolab_url'
+        connection: 'heroku_mongolab'
     },
+    
     
 
     /***************************************************************************
