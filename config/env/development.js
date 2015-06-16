@@ -22,14 +22,20 @@ module.exports = {
         connection: 'heroku_mongolab_url'
     },*/
     connections: {
-        heroku_mongolab_url: {
+        local_mongodb: {
             adapter: 'sails-mongo',
-            url: 'mongodb://heroku_8qfjzm61:ep7hqb7lvmrkgup87ffm531gks@ds047692.mongolab.com:47692/heroku_8qfjzm61'
+            //url:process.env.MONGOLAB_URI
+            host: 'localhost',
+            port: 27017,
+            schema: 'true',
+            user: '',
+            password: '',
+            database: 'showdemo'
         }
     },
     models: {
-        connection: 'heroku_mongolab_url'
-    }
+        connection: 'local_mongodb'
+    },
 
 
 };
