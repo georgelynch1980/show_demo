@@ -43,11 +43,6 @@ module.exports = {
                     _pageId = pageId;
                 }
 
-
-                setInterval(function () {
-                    http.get("https://tranquil-stream-8578.herokuapp.com/show?projectBy="+projectId);
-                }, 300000); // every 5 minutes (300000)
-                
                 return res.view('show', {
                     pages: pages,
                     pagesId: _pageId,
